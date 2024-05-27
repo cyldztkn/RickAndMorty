@@ -1,0 +1,26 @@
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-default);
+    color: var(--primary);
+    padding: 16px 8px;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: var(--input-transition);
+}
+
+button:hover {
+    box-shadow: var(--input-focus-shadow);
+}
+
+button:active {
+    background-color: var(--secondary-dark);
+}
+
+button.pagination-button {
+    height: 52px;
+    aspect-ratio: 1/1;
+
+}

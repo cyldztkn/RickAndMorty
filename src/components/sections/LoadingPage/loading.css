@@ -1,0 +1,157 @@
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(0.01)
+    }
+
+    10% {
+        transform: scale(0.8)
+    }
+
+    80% {
+        transform: scale(1.2)
+    }
+
+    85% {
+        transform: scale(1)
+    }
+
+    100% {
+        transform: scale(0.01)
+    }
+}
+
+@keyframes portal0 {
+    0% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes portal1 {
+    0% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes portal2 {
+    0% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes portal3 {
+    0% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(-1turn)
+    }
+}
+
+@keyframes portal4 {
+    0% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes portal5 {
+    0% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(1turn)
+    }
+}
+
+
+
+div.animation-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90dvh;
+    position: relative;
+
+    svg {
+        /* transform: scale(0.01); */
+        animation-name: scaleAnimation;
+        animation-duration: 4000ms;
+        animation-timing-function: linear;
+        animation-delay: 2s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+    }
+    h1{
+        position: absolute;
+        z-index: 100;
+        top: 20px;
+
+    }
+
+}
+
+#Rick-and-morty-portal-0 {
+    transform-origin: center;
+    animation-name: portal0;
+    animation-duration: 4000ms;
+    animation-timing-function: linear;
+    /* animation-delay: 2s; */
+    /* animation-direction: alternate; */
+    animation-iteration-count: infinite;
+}
+#Rick-and-morty-portal-1 {
+    transform-origin: center;
+    animation-name: portal1;
+    animation-duration: 4000ms;
+    animation-timing-function: linear;
+    /* animation-delay: 2s; */
+    /* animation-direction: alternate; */
+    animation-iteration-count: infinite;
+}
+
+#Rick-and-morty-portal-2 {
+    transform-origin: center;
+    animation-name: portal2;
+    animation-duration: 6000ms;
+    animation-timing-function: linear;
+    /* animation-delay: 2s; */
+    /* animation-direction: alternate; */
+    animation-iteration-count: infinite;
+}
+
+#Rick-and-morty-portal-3 {
+    transform-origin: center;
+    animation-name: portal3;
+    animation-duration: 7000ms;
+    animation-timing-function: linear;
+    /* animation-delay: 2s; */
+    /* animation-direction: alternate; */
+    animation-iteration-count: infinite;
+}
+#Rick-and-morty-portal-4 {
+    transform-origin: center;
+    animation-name: portal4;
+    animation-duration: 12000ms;
+    animation-timing-function: linear;
+    /* animation-delay: 2s; */
+    /* animation-direction: alternate; */
+    animation-iteration-count: infinite;
+}

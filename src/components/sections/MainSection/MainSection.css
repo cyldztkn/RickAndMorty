@@ -1,0 +1,36 @@
+main {
+    background-color: var(--primary);
+    box-shadow: var(--main-shadow);
+    flex: 18 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 20px 0px 0px 20px;
+    padding: 28px;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 16px;
+    max-height: 93dvh;
+    overflow-y: auto;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ; */
+
+
+    
+    a {
+        flex: 25% 0 0;
+        max-width: 250px;
+        /* padding: 0; */
+    }
+
+
+
+}
+
+@media screen and (max-width: 744px) {
+
+    main {
+        border-radius: 20px;
+        margin: 20px;
+        padding: 12px;
+    }
+}

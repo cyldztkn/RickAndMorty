@@ -1,0 +1,28 @@
+div.species-area {
+    color: var(--white, #F6FEFF);
+
+    /* caption/light */
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    display: inline-flex;
+    padding: 4px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+@media screen and (max-width: 744px) {
+
+    div.species-area {
+        padding: 4px 0px;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        gap: 4px;
+
+    }
+}
