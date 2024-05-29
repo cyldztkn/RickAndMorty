@@ -5,7 +5,14 @@ const Species = (props) => {
   let species = props.species;
   return (
     <div className="species-area">
-      <img src={`./species/${species.toLowerCase()}.svg`} alt="" />
+      <img
+        src={`./species/${
+          species == "Mythological Creature"
+            ? "mytologycal"
+            : species.toLowerCase()
+        }.svg`}
+        alt=""
+      />
       {species}
     </div>
   );

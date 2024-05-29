@@ -9,15 +9,14 @@ main {
     align-items: center;
     justify-content: space-evenly;
     gap: 16px;
-    max-height: 93dvh;
+    max-height: 92dvh;
     overflow-y: auto;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr ; */
+
 
 
     
     a {
-        flex: 25% 0 0;
+        flex: 25% 1 auto;
         max-width: 250px;
         /* padding: 0; */
     }

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useRef } from "react";
+import PropTypes from "prop-types";
 
 // import stylesheets
 import "./Aside.css";
@@ -7,28 +8,26 @@ import "./Aside.css";
 import Checkbox from "../../items/Checkbox";
 import Button from "../../items/Button/Button";
 
-const Aside = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  // const [data, setData] = useContext(ContextProvider);
+const Aside = (props) => {
+  const menuRef = useRef("navbar");
+  const submitHandler = props.submitHandler;
+  const changeHandler = props.changeHandler;
+  const formRef = props.formRef;
+  // console.log(props)
 
   let menuToggler = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const userInput = Object.fromEntries(formData.entries());
-    console.log(userInput);
+    menuRef.current.classList.toggle("close");
   };
 
   return (
-    <aside className={isOpen ? "open" : "close"}>
+    <aside className="close" ref={menuRef}>
       <img src="./open-the-menu.svg" alt="" onClick={menuToggler} />
       <form
-        onSubmit={(e) => {
-          submitHandler(e);
+        onChange={(e) => {
+          changeHandler(e);
         }}
+        onSubmit={submitHandler}
+        ref={formRef}
       >
         <input type="text" name="name" id="name" placeholder="Name" />
         <hr />
@@ -53,6 +52,7 @@ const Aside = () => {
             <Checkbox inner="Poopybutthole" checked />
             <Checkbox inner="Animal" checked />
             <Checkbox inner="Robot" checked />
+            <Checkbox inner="UnknownSpacies" checked />
           </div>
         </div>
         <hr />
@@ -64,3 +64,9 @@ const Aside = () => {
 };
 
 export default Aside;
+
+Aside.propTypes = {
+  submitHandler: PropTypes.func.isRequired,
+  changeHandler: PropTypes.func.isRequired,
+  formRef: PropTypes.any,
+};

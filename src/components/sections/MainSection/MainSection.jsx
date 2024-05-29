@@ -12,15 +12,15 @@ const MainSection = (props) => {
 
   const nextPage = () => {
     setCardCount(cardCount + 20);
-    console.log("basıldı");
+    // console.log("basıldı");
   };
   return (
     <main>
-      {console.log(data)}
+      {/* {console.log(data)} */}
       {data.slice(0, `${cardCount}`).map((item) => {
         return <Card cardData={item} key={item.id} />;
       })}
-      {console.log(data)}
+      {/* {console.log(data)} */}
       <button onClick={nextPage}>See More</button>
     </main>
   );
