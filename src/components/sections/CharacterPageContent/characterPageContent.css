@@ -1,0 +1,23 @@
+section.content-provider {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 18 0 0;
+    gap: 24px;
+    padding-right: 24px;
+}
+
+@media screen and (max-width: 744px) {
+    section.content-provider {
+        flex-direction: column;
+        padding-left: 24px;
+        gap: 24px;
+        /* margin-bottom: 120px; */
+
+    }
+
+
+    aside.item-page {
+        position: absolute;
+    }
+}

@@ -1,6 +1,6 @@
 div.CharacterImg {
-    flex: 1 1 auto;
-    height: 96dvh;
+    flex: 1 0 40%;
+    height: 92dvh;
     padding: 24px;
     border-radius: 24px;
     background: var(--Primary, #1E2838);

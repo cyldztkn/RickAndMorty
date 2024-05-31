@@ -1,47 +1,80 @@
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+
+// style
+import "./CharacterInfo.css";
 
 const CharacterInfo = (props) => {
   const data = props.data;
+  const allEpisodes = data.episode;
   const [episodes, setEpisodes] = useState(null);
-  useEffect(() => {
+
+  const fetchAllEpisodesName = async () => {
     try {
-      const promises = data.episode.map((episodeUrl) => {
-        return fetch(episodeUrl).then((res) => res.json());
+      const fetchPromises = [];
+      allEpisodes.map((item) => {
+        fetchPromises.push(fetch(item).then((res) => res.json()));
       });
-
-      Promise.all(promises)
-        .then((responses) => {
-          const allEpisodes = responses.flatMap((response) => response.results);
-          setEpisodes(allEpisodes);
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
+      const response = await Promise.all(fetchPromises);
+      setEpisodes(response);
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.log("Episode Name Fetch Error", error);
     }
-  }, [data.episode]);
+  };
 
+  useEffect(() => {
+    fetchAllEpisodesName();
+  }, []);
   return (
     <div className="CharacterInfo">
-      {console.log(data)}
+      {/* {console.log(data)} */}
       <div className="container">
         <h1>{data.name}</h1>
         <ul>
-          <li>Status: {data.status}</li>
-          <li>species: {data.species}</li>
-          <li>type: {data.type}</li>
-          <li>gender: {data.gender}</li>
-          <li>origin: {data.origin.name}</li>
+          <li>
+            {" "}
+            <p className="list-title"> Status:</p>
+            <p className="list-content">{data.status}</p>
+          </li>
+          <li>
+            {" "}
+            <p className="list-title"> Species:</p>
+            <p className="list-content">{data.species}</p>
+          </li>
+          <li>
+            {" "}
+            <p className="list-title"> Type:</p>
+            <p className="list-content">
+              {data.type ? data.type : "Undifined"}
+            </p>
+          </li>
+          <li>
+            {" "}
+            <p className="list-title"> Gender:</p>
+            <p className="list-content">{data.gender}</p>
+          </li>
+          <li>
+            {" "}
+            <p className="list-title"> Origin:</p>
+            <p className="list-content">{data.origin.name}</p>
+          </li>
         </ul>
       </div>
       <div className="container">
         <h1>Episodes</h1>
         <ul>
+          {episodes && console.log(episodes)}
           {episodes &&
-            episodes.map((episode) => (
-              <li key={episode.id}>{episode.name}</li>
-            ))}
+            episodes.slice(0, 7).map((item) => {
+              return (
+                <li key={item.id}>
+                  {" "}
+                  <p className="list-title"> {item.episode}:</p>
+                  <p className="list-content">{item.name}</p>
+                </li>
+              );
+            })}
+          {episodes && episodes.length > 7 ? <li>...</li> : ""}
         </ul>
       </div>
     </div>
@@ -49,3 +82,7 @@ const CharacterInfo = (props) => {
 };
 
 export default CharacterInfo;
+
+CharacterInfo.propTypes = {
+  data: PropTypes.object,
+};

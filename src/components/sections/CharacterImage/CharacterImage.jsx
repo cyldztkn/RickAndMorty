@@ -1,5 +1,8 @@
 import "./CharacterImage.css";
 
+import PropTypes from "prop-types";
+
+
 const CharacterImage = (props) => {
   return (
     <div className="CharacterImg">
@@ -9,3 +12,7 @@ const CharacterImage = (props) => {
 };
 
 export default CharacterImage;
+
+CharacterImage.propTypes = {
+  imgSrc: PropTypes.string,
+};

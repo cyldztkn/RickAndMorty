@@ -122,3 +122,11 @@ input[type="checkbox"]:checked::before {
   background: var(--secondary-light);
 }
 
+@media screen and (max-width: 744px) {
+
+  #root {
+      display: block;
+      padding: 1.5rem 0rem;
+      
+  }
+}

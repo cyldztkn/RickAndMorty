@@ -1,5 +1,37 @@
+@keyframes loading-effect {
+    0% {
+        background: linear-gradient(270deg, var(--disable) 0%, var(--white) 8%, var(--disable) 100%);
+    }
+
+    15% {
+        background: linear-gradient(270deg, var(--disable) 0%, var(--white) 16%, var(--disable) 100%);
+    }
+
+    30% {
+        background: linear-gradient(270deg, var(--disable) 0%, var(--white) 20%, var(--disable) 100%);
+    }
+
+    70% {
+        background: linear-gradient(270deg, var(--disable) 0%, var(--white) 80%, var(--disable) 100%);
+    }
+
+    85% {
+        background: linear-gradient(270deg, var(--disable) 0%, var(--white) 88%, var(--disable) 100%);
+    }
+
+
+    100% {
+        background: linear-gradient(270deg, var(--disable) 0%, var(--white) 92%, var(--disable) 100%);
+    }
+
+}
+
+a {
+    min-width: 18%;
+    aspect-ratio: 168/236;
+}
+
 article {
-    /* width: 100%; */
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
@@ -16,12 +48,21 @@ article {
         position: relative;
         width: 100%;
         border-radius: 12px;
+        aspect-ratio: 1/1;
 
         img.card-image {
             aspect-ratio: 1/1;
-            min-width: 100%;
+            width: 100%;
+            height: 100%;
             border-radius: 12px;
             object-fit: fill;
+            animation-name: loading-effect;
+            animation-duration: 800ms;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+
 
         }
     }
@@ -49,10 +90,20 @@ article:hover {
 
 @media screen and (max-width: 744px) {
 
-    article {
-        padding: 8px;
-        gap: 8px;
-        border-radius: 12px;
+
+    main {
+        a {
+            width: 100%;
+            max-width: unset;
+        }
+
+        article {
+            padding: 8px;
+            gap: 8px;
+            border-radius: 12px;
+
+        }
 
     }
+
 }

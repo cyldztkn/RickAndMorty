@@ -7,11 +7,11 @@ import Card from "../Card/Card";
 import { useState } from "react";
 
 const MainSection = (props) => {
-  const [cardCount, setCardCount] = useState(20);
+  const [cardCount, setCardCount] = useState(25);
   let data = props.data;
 
   const nextPage = () => {
-    setCardCount(cardCount + 20);
+    setCardCount(cardCount + 25);
     // console.log("basıldı");
   };
   return (
