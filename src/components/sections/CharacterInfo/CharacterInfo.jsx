@@ -63,7 +63,6 @@ const CharacterInfo = (props) => {
       <div className="container">
         <h1>Episodes</h1>
         <ul>
-          {episodes && console.log(episodes)}
           {episodes &&
             episodes.slice(0, 7).map((item) => {
               return (

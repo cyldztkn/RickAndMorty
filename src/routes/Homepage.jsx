@@ -103,11 +103,16 @@ const Homepage = () => {
     filterCharacters(userInput);
   };
 
+  const resetHandlerFunc = () => {
+    setUiData(data);
+  };
+
   return (
     <>
       <Aside
         changeHandler={changeHandlerFunc}
         submitHandler={submitHandlerFunc}
+        resetHandler={resetHandlerFunc}
         formRef={formRef}
       />
       <MainSection data={uiData} />

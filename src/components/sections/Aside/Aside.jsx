@@ -12,6 +12,7 @@ const Aside = (props) => {
   const menuRef = useRef("navbar");
   const submitHandler = props.submitHandler;
   const changeHandler = props.changeHandler;
+  const resetHandler = props.resetHandler
   const formRef = props.formRef;
   // console.log(props)
 
@@ -27,6 +28,7 @@ const Aside = (props) => {
           changeHandler(e);
         }}
         onSubmit={submitHandler}
+        onReset={resetHandler}
         ref={formRef}
       >
         <input type="text" name="name" id="name" placeholder="Name" />
@@ -68,5 +70,6 @@ export default Aside;
 Aside.propTypes = {
   submitHandler: PropTypes.func.isRequired,
   changeHandler: PropTypes.func.isRequired,
+  resetHandler: PropTypes.func.isRequired,
   formRef: PropTypes.any,
 };

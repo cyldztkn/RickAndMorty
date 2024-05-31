@@ -9,10 +9,12 @@ button {
     font-size: 1.25rem;
     cursor: pointer;
     transition: var(--input-transition);
+    border: none;
 }
 
 button:hover {
     box-shadow: var(--input-focus-shadow);
+    border: 1px solid var(--white);
 }
 
 button:active {

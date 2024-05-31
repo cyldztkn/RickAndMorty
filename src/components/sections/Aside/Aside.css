@@ -135,9 +135,9 @@ aside.close {
     aside {
         position: absolute;
         width: 324px;
-        height: 80%;
+        height: 96%;
         left: 0;
-        top: 33px;
+        top: 24px;
         padding: 32px 20px 12px 20px;
         justify-content: flex-start;
         z-index: 100;
