@@ -94,6 +94,7 @@ const Homepage = () => {
     const formData = new FormData(formRef.current);
     const userInput = Object.fromEntries(formData.entries());
     filterCharacters(userInput);
+    console.log(formRef.current)
   };
 
   const submitHandlerFunc = (e) => {
